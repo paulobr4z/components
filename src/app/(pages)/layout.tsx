@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
-import StyledComponentsRegistry from './lib/registry'
+
 import { Poppins } from 'next/font/google'
+import StyledComponentsRegistry from '@/lib/registry'
+import { GlobalStyle } from '@/styles/global'
+import { Sidebar } from '@/components/Sidebar'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -21,7 +24,13 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={poppins.className}>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <GlobalStyle />
+          <div style={{ display: 'grid', gridTemplateColumns: '265px 1fr' }}>
+            <Sidebar />
+            {children}
+          </div>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

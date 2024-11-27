@@ -1,3 +1,5 @@
+'use client'
+
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -14,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #000000;
   }
 
   body, input, textarea, button {
